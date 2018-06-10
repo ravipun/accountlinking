@@ -26,7 +26,7 @@ app.get('/',(req,res)=>{
 
 app.get('/authenticate',(req,res)=>{
     res.send('Authenticate');
-    console.log(req.body);
+    console.log(req);
 
 });
 
