@@ -1,5 +1,5 @@
-const express = require('express');
-
+var express = require('express');
+var bodyParser = require('body-parser');
 
 
 
@@ -10,6 +10,7 @@ const port = process.env.PORT || 3000;
 
 
 var app = express();
+app.use(bodyParser.json());
 
 //http route handler
 app.get('/',(req,res)=>{
@@ -25,6 +26,8 @@ app.get('/',(req,res)=>{
 
 app.get('/authenticate',(req,res)=>{
     res.send('Authenticate');
+    console.log(req.body);
+
 });
 
 //Bind the application to Machine
