@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var fs = require('fs');
 
 
 
@@ -25,8 +26,20 @@ app.get('/',(req,res)=>{
 });
 
 app.get('/authenticate',(req,res)=>{
-    res.send('Authenticate Account Linking');
-    console.log(req.query);
+   
+  
+    fs.readFile('JWT2.html', function (err, html) {
+        if (err) {
+           throw err; 
+        }
+   
+       res.writeHeader(200, {"Content-Type": "text/html"});  
+       res.write(html);  
+       res.end();  
+
+    })
+
+
 
 });
 
