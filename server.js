@@ -25,7 +25,7 @@ app.get('/',(req,res)=>{
 });
 
 app.get('/authenticate',(req,res)=>{
-    res.send('Authenticate');
+    res.send('Authenticate Account Linking');
     console.log(req.query);
 
 });
